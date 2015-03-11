@@ -18,6 +18,10 @@ if [[ ${SELENIUM_BROWSER} != "firefox" ]] && [[ ${SELENIUM_BROWSER} != "chrome" 
     exit 2
 fi
 
+if [[ ${SELENIUM_BROWSER} == "firefox" ]]; then
+    SELENIUM_BROWSER="iceweasel"
+fi
+
 if [[ ${SELENIUM_BROWSER} == "chrome" ]]; then
     SELENIUM_BROWSER="googlechrome"
 fi
