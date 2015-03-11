@@ -1,4 +1,4 @@
-FROM cedvan/debian:wheezy.20150311
+FROM cedvan/ubuntu:14.04.20150311
 MAINTAINER dev@cedvan.com
 
 # Install java
@@ -14,7 +14,7 @@ RUN apt-get update -qq \
 # Install Firefox
 RUN apt-get update -qq \
     && apt-get install -qqy \
-        iceweasel
+        firefox
 
 # Install Chromium and ChromeDriver
 RUN apt-get update -qq \
@@ -32,7 +32,7 @@ RUN sh -c 'echo "deb http://deb.opera.com/opera/ stable non-free" >> /etc/apt/so
 RUN rm -rf /var/lib/apt/lists/*
 
 # Install Selenium
-ADD http://selenium-release.storage.googleapis.com/2.44/selenium-server-standalone-2.44.0.jar /opt/selenium.jar
+ADD http://selenium-release.storage.googleapis.com/2.45/selenium-server-standalone-2.45.0.jar /opt/selenium.jar
 
 # Install bin
 ADD assets/bin /bin/selenium
