@@ -4,7 +4,7 @@
 
 ```bash
 docker run --name selenium --rm \
-    cedvan/selenium:2.45
+    cedvan/selenium:2.44
 ```
 *Port by default to Selenium is 4444*
 
@@ -24,7 +24,7 @@ Below is the complete list of available options that can be used to customize yo
 docker run --name selenium --rm \
     -e "XVFB_RESOLUTION=1920x1080" \
     -e "SELENIUM_BROWSER=firefox" \
-    cedvan/selenium:2.45
+    cedvan/selenium:2.44
 ```
 
 ## Remarks
