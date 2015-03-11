@@ -12,9 +12,11 @@ RUN apt-get update -qq \
         xvfb
 
 # Install Firefox
-RUN apt-get update -qq \
-    && apt-get install -qqy \
-        firefox
+RUN wget ftp://ftp.mozilla.org/pub/mozilla.org/firefox/releases/35.0/linux-x86_64/fr/firefox-35.0.tar.bz2 \
+    && tar -xjvf firefox-35.0.tar.bz2 \
+    && rm -rf /opt/firefox-* \
+    && mv firefox /opt/firefox-35.0 \
+    && ln -sf /opt/firefox-35.0/firefox /usr/bin/firefox
 
 # Install Chromium and ChromeDriver
 RUN apt-get update -qq \

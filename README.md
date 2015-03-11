@@ -30,3 +30,4 @@ docker run --name selenium --rm \
 ## Remarks
 
 Mode **Chrome and Opera don't work** for the moment, Selenium will backup automatically to start with firefox driver. I need a solution... contributions are welcome ;)
+Firefox bug `GLib-CRITICAL **: g_slice_set_config: assertion 'sys_page_size == 0' failed` with Ubuntu. Wait fix for release version 2.45
