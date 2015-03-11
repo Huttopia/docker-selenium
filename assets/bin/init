@@ -1,0 +1,9 @@
+#!/bin/bash
+
+PATH_BIN=/bin/selenium
+
+# Configuring
+source $PATH_BIN/config
+
+# Launching
+source $PATH_BIN/start

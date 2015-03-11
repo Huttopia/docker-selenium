@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo ""
+echo "Launching Selenium with Xbvf..."
+
+export DISPLAY=:${XVFB_DISPLAY}
+
+$(Xvfb :${XVFB_DISPLAY} -ac -screen 0 ${XVFB_RESOLUTION}x${XVFB_DEPTH} &); \
+        java \
+            -jar /opt/selenium.jar \
+            -browser ${SELENIUM_BROWSER} \
+            -Dwebdriver.chrome.driver=${PATH_BIN}/drivers/chrome-driver
+            -Dwebdriver.opera.driver=${PATH_BIN}/drivers/opera-driver

@@ -1,0 +1,27 @@
+#!/bin/bash
+
+echo ""
+echo "Configuring settings..."
+
+XVFB_DISPLAY=0
+XVFB_RESOLUTION=${XVFB_RESOLUTION:-1280x1024}
+XVFB_DEPTH=${XVFB_DEPTH:-24}
+SELENIUM_BROWSER=${SELENIUM_BROWSER:-firefox}
+
+if [[ ${XVFB_DEPTH} != "16" ]] && [[ ${XVFB_DEPTH} != "24" ]] && [[ ${XVFB_DEPTH} != "32" ]]; then
+    echo "Error : Depth invalid ! (Values allowed : 16 / 24 / 32)"
+    exit 1
+fi
+
+if [[ ${SELENIUM_BROWSER} != "firefox" ]] && [[ ${SELENIUM_BROWSER} != "chrome" ]] && [[ ${SELENIUM_BROWSER} != "opera" ]]; then
+    echo "Error : Browser invalid ! (Values allowed : firefox / chrome / opera)"
+    exit 2
+fi
+
+if [[ ${SELENIUM_BROWSER} == "chrome" ]]; then
+    SELENIUM_BROWSER="googlechrome"
+fi
+
+echo "Use resolution ${XVFB_RESOLUTION}"
+echo "Use depth ${XVFB_DEPTH}"
+echo "Use browser ${SELENIUM_BROWSER}"
